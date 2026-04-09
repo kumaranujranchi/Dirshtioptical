@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Drishti Optical | Shop Eyewear</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "secondary-fixed-dim": "#59d9d9",
+                "surface-variant": "#dfe3e8",
+                "surface-container-lowest": "#ffffff",
+                "inverse-surface": "#2d3135",
+                "surface-bright": "#f7f9ff",
+                "surface-dim": "#d7dae0",
+                "on-secondary": "#ffffff",
+                "tertiary-container": "#1c252c",
+                "on-secondary-fixed-variant": "#004f4f",
+                "on-primary-container": "#768dad",
+                "primary-fixed-dim": "#b0c8eb",
+                "inverse-on-surface": "#eef1f7",
+                "tertiary": "#061016",
+                "secondary-container": "#79f6f5",
+                "surface-container-low": "#f1f4fa",
+                "surface-container-high": "#e5e8ee",
+                "secondary": "#006a6a",
+                "on-surface": "#181c20",
+                "surface": "#f7f9ff",
+                "tertiary-fixed-dim": "#bec8d1",
+                "on-primary-fixed-variant": "#314865",
+                "primary-container": "#0a2540",
+                "surface-tint": "#49607e",
+                "primary": "#000f22",
+                "tertiary-fixed": "#dae4ee",
+                "inverse-primary": "#b0c8eb",
+                "on-tertiary": "#ffffff",
+                "error-container": "#ffdad6",
+                "primary-fixed": "#d2e4ff",
+                "secondary-fixed": "#79f6f5",
+                "surface-container-highest": "#dfe3e8",
+                "surface-container": "#ebeef4",
+                "on-primary-fixed": "#001c37",
+                "outline-variant": "#c4c6ce",
+                "on-tertiary-container": "#828c95",
+                "error": "#ba1a1a",
+                "on-primary": "#ffffff",
+                "on-secondary-container": "#007070",
+                "on-tertiary-fixed-variant": "#3e4850",
+                "background": "#f7f9ff",
+                "on-background": "#181c20",
+                "on-surface-variant": "#43474d",
+                "on-secondary-fixed": "#002020",
+                "outline": "#74777e",
+                "on-error": "#ffffff",
+                "on-error-container": "#93000a",
+                "on-tertiary-fixed": "#131d24"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/70 dark:bg-slate-950/70 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-4 max-w-[1920px] mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-slate-50">Drishti Optical</div>
+<div class="hidden md:flex items-center gap-8 font-['Manrope'] font-semibold tracking-tight">
+<a class="text-teal-600 dark:text-teal-400 border-b-2 border-teal-600 dark:border-teal-400 pb-1" href="#">Eyeglasses</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Sunglasses</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Contact Lenses</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Eye Test</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Blog</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-50 cursor-pointer">person</span>
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-50 cursor-pointer">favorite</span>
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-50 cursor-pointer">shopping_cart</span>
+</div>
+</div>
+<div class="bg-slate-200/20 dark:bg-slate-800/20 h-[1px]"></div>
+</nav>
+<main class="pt-24 pb-20 px-8 max-w-[1920px] mx-auto">
+<!-- Breadcrumbs & Category Header -->
+<div class="mb-12">
+<nav class="flex text-sm font-label text-on-surface-variant mb-4 gap-2">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="material-symbols-outlined text-xs leading-none">chevron_right</span>
+<a class="text-primary font-semibold" href="#">Eyeglasses</a>
+</nav>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="text-5xl font-extrabold tracking-tighter text-primary mb-2">Eyeglasses</h1>
+<p class="text-on-surface-variant max-w-2xl">Precision-crafted frames that blend clinical excellence with avant-garde design. Discover your perfect fit through our curated atelier collection.</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-sm font-medium text-on-surface-variant">Sort by:</span>
+<div class="relative group">
+<button class="flex items-center justify-between gap-8 bg-surface-container-lowest px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-shadow border border-outline-variant/10">
+<span class="font-semibold text-primary">Popularity</span>
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-72 flex-shrink-0 space-y-10">
+<!-- Filter Group: Price -->
+<section>
+<h3 class="font-headline font-bold text-lg mb-6 flex items-center justify-between">
+                        Price Range
+                        <span class="material-symbols-outlined text-outline">tune</span>
+</h3>
+<div class="space-y-4">
+<div class="h-1 bg-surface-container-high rounded-full relative">
+<div class="absolute left-1/4 right-1/4 h-full bg-secondary"></div>
+<div class="absolute left-1/4 -top-1.5 w-4 h-4 bg-white border-2 border-secondary rounded-full shadow-sm"></div>
+<div class="absolute right-1/4 -top-1.5 w-4 h-4 bg-white border-2 border-secondary rounded-full shadow-sm"></div>
+</div>
+<div class="flex justify-between text-sm font-mono text-on-surface-variant">
+<span>$50</span>
+<span>$1500</span>
+</div>
+</div>
+</section>
+<!-- Filter Group: Gender -->
+<section>
+<h3 class="font-headline font-bold text-lg mb-6">Gender</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-secondary focus:ring-secondary-container" type="checkbox"/>
+<span class="text-on-surface-variant group-hover:text-primary transition-colors">Men's</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-secondary focus:ring-secondary-container" type="checkbox"/>
+<span class="text-primary font-semibold">Women's</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-secondary focus:ring-secondary-container" type="checkbox"/>
+<span class="text-on-surface-variant group-hover:text-primary transition-colors">Unisex</span>
+</label>
+</div>
+</section>
+<!-- Filter Group: Frame Type -->
+<section>
+<h3 class="font-headline font-bold text-lg mb-6">Frame Type</h3>
+<div class="grid grid-cols-2 gap-3">
+<button class="bg-surface-container-low py-3 px-4 rounded-xl text-sm font-medium hover:bg-surface-container-high transition-colors">Full-Rim</button>
+<button class="bg-secondary-container/20 text-on-secondary-container border border-secondary/20 py-3 px-4 rounded-xl text-sm font-bold">Rimless</button>
+<button class="bg-surface-container-low py-3 px-4 rounded-xl text-sm font-medium hover:bg-surface-container-high transition-colors">Semi-Rim</button>
+<button class="bg-surface-container-low py-3 px-4 rounded-xl text-sm font-medium hover:bg-surface-container-high transition-colors">Cat-Eye</button>
+</div>
+</section>
+<!-- Filter Group: Lens Type -->
+<section>
+<h3 class="font-headline font-bold text-lg mb-6">Lens Specialization</h3>
+<div class="space-y-4">
+<div class="p-4 bg-primary text-on-primary rounded-xl">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-secondary-fixed">shield</span>
+<span class="font-bold">Blue Light Filter</span>
+</div>
+<p class="text-[11px] opacity-70">Recommended for digital screens</p>
+</div>
+<div class="p-4 bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-outline">wb_sunny</span>
+<span class="font-bold">Photochromic</span>
+</div>
+<p class="text-[11px] text-on-surface-variant">Lenses that darken in sunlight</p>
+</div>
+</div>
+</section>
+</aside>
+<!-- Product Grid -->
+<div class="flex-grow">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Product Card 1 -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="absolute top-6 left-6 z-10 flex gap-2">
+<span class="bg-primary text-on-primary text-[10px] font-bold px-2 py-1 rounded tracking-widest uppercase">Premium</span>
+</div>
+<div class="relative aspect-[4/3] overflow-hidden rounded-xl mb-6 bg-surface-container-low">
+<img alt="Modern minimalist spectacles" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="studio product shot of luxury dark tortoiseshell glasses on a clean neutral background with elegant lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5E43BbA49-84YgRNOae36b50AQarRUtAapxF_v9cXOIutcbxh2tv0yrcPtimGfzpjF4HT1egTqud8MSlKHpRPJc2uCYyo5NFYJXTvdwjDdq0ZaRTJdURtP7TmEd_ZwTRjy7-i-lEckH6rRyjbtTbz1yothTGOvgGi7bAJzKw2soTeaEcUmM8Z_-Kz76b6vW5Vdh9s7XlVXvPniFtoWzrcK8E_1Eh7lwEYjbwNnmSHQobLx8q_6I54cYicmn_7Aff3LWVRq9Tmyz8"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h3 class="text-xl font-bold text-primary">Zeiss Atelier 01</h3>
+<span class="material-symbols-outlined text-outline-variant cursor-pointer hover:text-error transition-colors">favorite</span>
+</div>
+<p class="text-sm text-on-surface-variant">Polished Acetate | Titanium Hinges</p>
+<div class="pt-4 flex items-end justify-between">
+<span class="text-2xl font-extrabold text-primary">$345.00</span>
+<button class="bg-secondary text-on-secondary px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                                    Add
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden rounded-xl mb-6 bg-surface-container-low">
+<img alt="Clear frame glasses" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="Close up of clear transparent frame glasses on a minimalist textured surface with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe3J20bXtbEptbAEIa2eszKvyVLMGPpc2Ow4vTdA-WUmspwfQIT_bfhLOBQyRVt7jv8GUSplbhwcED9lzZzxV0tlWfVUoqq-ZPc3J2Rj14xLHpaU1HqVmqzgs7WKWl_khdabrq4ivqOyNtpegDO39wwQCv_sh2TLjip6UqWvsxp5BFS-buVdvCgdCRiuBS5bv0EN5gJmH_SnzoEy1BXESxPINq0w0DNYkQvaXTo6eSo6YViNGXeoWGEs0vUEqzPkus9u3JIWw6olY"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h3 class="text-xl font-bold text-primary">Prism Clarity</h3>
+<span class="material-symbols-outlined text-outline-variant cursor-pointer hover:text-error transition-colors">favorite</span>
+</div>
+<p class="text-sm text-on-surface-variant">Transparent Polymer | Light Weight</p>
+<div class="pt-4 flex items-end justify-between">
+<span class="text-2xl font-extrabold text-primary">$189.00</span>
+<button class="bg-secondary text-on-secondary px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                                    Add
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="absolute top-6 right-6 z-10">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded tracking-widest uppercase">Best Seller</span>
+</div>
+<div class="relative aspect-[4/3] overflow-hidden rounded-xl mb-6 bg-surface-container-low">
+<img alt="Black rectangular glasses" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="Sleek black rectangular frame glasses displayed on a white marble slab with clinical studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpobrdU-q9tHk05EuSDgfr7SAmtMIpjiltWa--cv7TkZRaororMlgDczckp1Df5-4gjg801znpfSiVwW37vtIpequYIoFaqIHedjTnyk-5ssvV2OsyaqB28ganetx8-skQKJ3sDcwrm4bYry7vUQEwN3kMrnfeC1kosX_aEq8FiS7Suu0w4CkEj39xaxaBWfiuSPpzQgiWcDkuGO8YLgfXTPwZWQJZLeiD_N9mUx0V1du7w1uRx5j_Ww4UeWAoGgDn2kIpMTQsU-A"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h3 class="text-xl font-bold text-primary">The Executive</h3>
+<span class="material-symbols-outlined text-outline-variant cursor-pointer hover:text-error transition-colors">favorite</span>
+</div>
+<p class="text-sm text-on-surface-variant">Matte Finish | High-Contrast Design</p>
+<div class="pt-4 flex items-end justify-between">
+<span class="text-2xl font-extrabold text-primary">$420.00</span>
+<button class="bg-secondary text-on-secondary px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                                    Add
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden rounded-xl mb-6 bg-surface-container-low">
+<img alt="Round gold glasses" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="Elegant thin gold wire round frame spectacles on a soft beige background with high fashion editorial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn3YsrfuRfOxOVU9AeE3KbiDNhWGjY4-Ardp14KwEYXWCEku7OHjI9kShvsBwLzQUNzbY795jP1DAvKZboSP0R2Bw_6INxKYUl3xhWUH087m4WcVuBMAMxQobcX38UOE-BXsx2LymAMOPvDV4dsUtfYcer1f443tLZweZ_yS-U39TfkrJfh5T2CNNCzBRr3Mw_wgYlhJ762lkZ4YyKKypUcue3vg2C46iKVO5D1Y8sGPozjad8np2ReLWvOFFz2CjwaKRxuVLz9XA"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h3 class="text-xl font-bold text-primary">Aura Round</h3>
+<span class="material-symbols-outlined text-outline-variant cursor-pointer hover:text-error transition-colors">favorite</span>
+</div>
+<p class="text-sm text-on-surface-variant">24k Gold Plated | Ultra-Thin</p>
+<div class="pt-4 flex items-end justify-between">
+<span class="text-2xl font-extrabold text-primary">$510.00</span>
+<button class="bg-secondary text-on-secondary px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                                    Add
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden rounded-xl mb-6 bg-surface-container-low">
+<img alt="Blue light blocking glasses" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="Digital professional using sleek modern blue light blocking glasses in a contemporary office setting with soft backlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7_bPSJCffZyQndISlz0--e7KWaJzXFVFxB_iVnloOCuznTOnFtlbQUUME-y3BcSLlkm2arqWtAXZh4txtF2_exv3o737odaf_zWF-khMiHQ6SaaskvDsA_xxI-1XO4jDxRP7YH4CtKRY2rnJqTr-1SgnoEPKaXXtx5320ezFtrOdT2VGPNkjHNMLV6B_N-mIedf6gFvqZrMHz8HitkdoMt85SRp664H2ygXT-1Fjplu7IeqP-Bsqyme6wzOkFg9ABU5F3KJ91Vx4"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h3 class="text-xl font-bold text-primary">Cyber Guard</h3>
+<span class="material-symbols-outlined text-outline-variant cursor-pointer hover:text-error transition-colors">favorite</span>
+</div>
+<p class="text-sm text-on-surface-variant">Includes Blue-Cut Lenses | Flex-Fit</p>
+<div class="pt-4 flex items-end justify-between">
+<span class="text-2xl font-extrabold text-primary">$125.00</span>
+<button class="bg-secondary text-on-secondary px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                                    Add
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden rounded-xl mb-6 bg-surface-container-low">
+<img alt="Rimless glasses" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="Ultra-minimalist rimless glasses with titanium temples floating against a clean blue gradient background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhIA6I00I_KVbfD9j8dAPe6EsiI1lynQbL4g_QBCTnEdGAVx9e8LMT3Leb7o-yPen2ShswLVtGHdhpityvwtBod6NLT7a4NvAIiHZIvEkV-7B88XVGTcTTgZdyicAYhkHz2ErenlvGlICTR0ylrZtbpZDwSOzO_J5lQN7n3LNJ_XV8d2JSCEE8SImnhP-Gz6zBEGOaWcqO1XjZY5fk1O41215crupxFVwZTckX5AMVXCNAh2wuRRzjoozvziIsqkQxsgMrOA5RjlA"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h3 class="text-xl font-bold text-primary">Ether Rimless</h3>
+<span class="material-symbols-outlined text-outline-variant cursor-pointer hover:text-error transition-colors">favorite</span>
+</div>
+<p class="text-sm text-on-surface-variant">Surgical Steel | Frameless Aesthetic</p>
+<div class="pt-4 flex items-end justify-between">
+<span class="text-2xl font-extrabold text-primary">$299.00</span>
+<button class="bg-secondary text-on-secondary px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                                    Add
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-16 flex justify-center items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-primary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-on-primary font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors font-medium">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors font-medium">3</button>
+<span class="px-2 text-outline-variant">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-primary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+<div class="bg-slate-100 dark:bg-slate-900 py-16">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto font-['Inter'] text-sm leading-relaxed text-slate-900 dark:text-slate-50">
+<div>
+<span class="text-xl font-bold font-['Manrope'] mb-6 block">Drishti Optical</span>
+<p class="text-slate-500 dark:text-slate-400 mb-6">Redefining visual precision through artisanal craftsmanship and clinical innovation.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold font-['Manrope'] mb-2">Shop</h4>
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors" href="#">Eyeglasses</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors" href="#">Sunglasses</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors" href="#">Contact Lenses</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold font-['Manrope'] mb-2">Support</h4>
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors" href="#">FAQ</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors" href="#">About Us</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold font-['Manrope'] mb-2">Legal</h4>
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="mt-16 text-center text-slate-500 dark:text-slate-400 text-xs px-8">
+                © 2024 Drishti Optical. Crafted for Precision.
+            </div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-3xl border-t border-slate-100 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
+<div class="flex justify-around items-center h-20 px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[11px] font-medium font-['Inter']">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/30 rounded-2xl px-4 py-1 transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[11px] font-medium font-['Inter']">Categories</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-[11px] font-medium font-['Inter']">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[11px] font-medium font-['Inter']">Account</span>
+</a>
+</div>
+</nav>
+</body></html>

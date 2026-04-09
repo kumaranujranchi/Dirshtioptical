@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Drishti Optical | Precision Eyewear &amp; Eye Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#59d9d9",
+                        "surface-variant": "#dfe3e8",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2d3135",
+                        "surface-bright": "#f7f9ff",
+                        "surface-dim": "#d7dae0",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#1c252c",
+                        "on-secondary-fixed-variant": "#004f4f",
+                        "on-primary-container": "#768dad",
+                        "primary-fixed-dim": "#b0c8eb",
+                        "inverse-on-surface": "#eef1f7",
+                        "tertiary": "#061016",
+                        "secondary-container": "#79f6f5",
+                        "surface-container-low": "#f1f4fa",
+                        "surface-container-high": "#e5e8ee",
+                        "secondary": "#006a6a",
+                        "on-surface": "#181c20",
+                        "surface": "#f7f9ff",
+                        "tertiary-fixed-dim": "#bec8d1",
+                        "on-primary-fixed-variant": "#314865",
+                        "primary-container": "#0a2540",
+                        "surface-tint": "#49607e",
+                        "primary": "#000f22",
+                        "tertiary-fixed": "#dae4ee",
+                        "inverse-primary": "#b0c8eb",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#d2e4ff",
+                        "secondary-fixed": "#79f6f5",
+                        "surface-container-highest": "#dfe3e8",
+                        "surface-container": "#ebeef4",
+                        "on-primary-fixed": "#001c37",
+                        "outline-variant": "#c4c6ce",
+                        "on-tertiary-container": "#828c95",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#007070",
+                        "on-tertiary-fixed-variant": "#3e4850",
+                        "background": "#f7f9ff",
+                        "on-background": "#181c20",
+                        "on-surface-variant": "#43474d",
+                        "on-secondary-fixed": "#002020",
+                        "outline": "#74777e",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#131d24"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/70 dark:bg-slate-950/70 backdrop-blur-xl shadow-sm dark:shadow-none">
+<nav class="flex justify-between items-center px-8 py-4 max-w-[1920px] mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-slate-50">Drishti Optical</div>
+<div class="hidden lg:flex items-center space-x-8">
+<a class="text-teal-600 dark:text-teal-400 border-b-2 border-teal-600 dark:border-teal-400 pb-1 font-['Manrope'] font-semibold tracking-tight" href="#">Eyeglasses</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors font-['Manrope'] font-semibold tracking-tight" href="#">Sunglasses</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors font-['Manrope'] font-semibold tracking-tight" href="#">Contact Lenses</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors font-['Manrope'] font-semibold tracking-tight" href="#">Eye Test</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors font-['Manrope'] font-semibold tracking-tight" href="#">Blog</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors font-['Manrope'] font-semibold tracking-tight" href="#">Contact</a>
+</div>
+<div class="flex items-center space-x-5">
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md transition-all duration-300 ease-in-out active:scale-95">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md transition-all duration-300 ease-in-out active:scale-95">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md transition-all duration-300 ease-in-out active:scale-95">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</nav>
+<div class="bg-slate-200/20 dark:bg-slate-800/20 h-[1px]"></div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[870px] flex items-center overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-90" data-alt="Sophisticated model wearing modern thick-rimmed eyeglasses in a minimalist bright studio with soft architectural shadows and clinical clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcMD3Gt8nnHzPIYpijLWwzWhCiglTFQVrPQgHNwHEDT_O0dN4jxOp0ybepopdayriQkLSArXxvVps0dUclZfXHVB1mZzLMkLkIQ9V0lM7nggnRKYJiu-WTV2FMyWV0W7s4ZoSVVCqqs15HKFCTTxqeX5kg0YYoS6akct-ToLQC8r6mcjcYuJJNuhadMJTOB-CgK7qP1dTrtbTkLDOCzae95DZgOJ1c_hRV_Sfz4Bevaky4MYqevjsqcx_GOaiPuQO7oiyXmoBIGFQ"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+<div class="max-w-2xl">
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase rounded mb-6">NEW COLLECTION 2024</span>
+<h1 class="text-6xl md:text-7xl font-extrabold tracking-tighter text-primary leading-[1.1] mb-6">See the World Clearly with Drishti Optical</h1>
+<p class="text-xl text-on-surface-variant font-body mb-10 leading-relaxed">Premium Eyewear | Free Eye Test | Fast Delivery</p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-primary text-on-primary font-semibold rounded-md shadow-lg hover:shadow-primary/20 transition-all active:scale-95">Shop Now</button>
+<button class="px-8 py-4 bg-secondary text-on-secondary font-semibold rounded-md shadow-lg hover:shadow-secondary/20 transition-all active:scale-95">Book Eye Test</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Bento Grid -->
+<section class="py-24 px-8 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-[700px]">
+<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-xl bg-surface-container-lowest">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up of high-end designer eyeglasses frames resting on a white clinical textured surface with soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6phIaSW5H6p1Exlb7YHBFbVKvOCmjYKAcdS2OdnJVpSgHcwKL7iyj7egLvANBgaOHPuAxRTPurmS5JmhNv_hhErkz-AZ32zJc9nh9LSAUu004THNf7KN_Z5JQgIEu7XEDVF8u7VAasSkXiRBRv1gFhTaYNuMhx9zgmZB5dUPJQHx8ub78canuOmTiQTThkwTXGulS-XtAmuHcvv1r83pj1CQpeDVLJqkAAAJ7300HZsH-xNRFwcdBkZq9ThP4AMsdYPHZuG935Yg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex flex-col justify-end p-8">
+<h3 class="text-2xl font-bold text-white mb-2">Eyeglasses</h3>
+<p class="text-white/80 font-body text-sm">Precision crafted for every face shape.</p>
+</div>
+</div>
+<div class="md:col-span-2 relative group overflow-hidden rounded-xl bg-surface-container-lowest">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Stylish aviator sunglasses on a minimalist background with sharp summer shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF-BxVfFIUj97mZOqetsn_aKgqY_opqQmagdg24C-9t1rbECexFntiKC7ljAWNXHa2F4ejVviibrXRg5RavviTcsZyOab-hUA1sDc9kvSiWxNK080RxFj8YxPs7Jhn0TG1FhNefXbPLDDtXRLiouXcGM2AWs_iHNIq7sryggZTPGHYh0yWhRptX3llqgdRHy-WnuIp1eOr-SEuokqNJoZ6CFLWwwxxadYyJ9x9Xv-U8LqqYwV3dkDLVAXe6JAHLCgXP0ue8xl3_2w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex flex-col justify-end p-8">
+<h3 class="text-2xl font-bold text-white mb-2">Sunglasses</h3>
+<p class="text-white/80 font-body text-sm">UV protection meets runway style.</p>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-xl bg-surface-container-lowest">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Macro photography of a contact lens on a sterile clinical background with teal water droplets." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChi6M0VsJdVH6IiNPPaRsuBKw6Jp1g3CnJQSLx9KyeSNfNMZcEshvI5Yk-6RhWBzjQiuOPPD1TN9PDu1PPjxowz9P-s5kMseHNozMvaZ-2ZgAu2QgjMuuKatI7rvHGkQ7S60-tIcXQUNqK9PU8TDU0Qcb-p7OAobMU0yBf4yUVmWqk9UiqYxqSdG10GyDPvnDIaKYOlQLqNxU5VyDeHBuBAn9wTqbssZS0V816UGO9KCQB71TqRu6lD76YALQui1wpnxfrj0kqXL4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex flex-col justify-end p-6">
+<h3 class="text-xl font-bold text-white mb-1">Contact Lenses</h3>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-xl bg-surface-container-lowest">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Blue light blocking glasses next to a modern workspace setup with soft laptop glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBJ1y1ZeG9q5_lxGY53VCZiOLD5B3PaBAsSt1Zl-VXjhXtVOHluX_GhFCzz8dzoDjsocbMLdmTebRYnGTMwCvAXqYgy_Qjf7jXjrcZ1b8L2lkaftQmZk7hxh0N6ecRRixa7qf8CedCaghsaWD8SYGZLb7MWQywQgnfHugirGa1CV5s9NEe5kygoVe5pMOGcBrJ_Mu5UYNxZz1JPbEE8vG-HbrPwvZ6jn7Pa4rLF1hqb2B3eTqvYrieNXGRMr_zC7KbGhMlbD3j5Us"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex flex-col justify-end p-6">
+<h3 class="text-xl font-bold text-white mb-1">Computer Glasses</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-4xl font-extrabold tracking-tight text-primary">Featured Frames</h2>
+<p class="text-on-surface-variant mt-2">The Digital Curator's Choice</p>
+</div>
+<button class="text-primary font-bold border-b-2 border-primary pb-1">View All</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl transition-all hover:shadow-[0_20px_40px_rgba(24,28,32,0.06)] group">
+<div class="relative mb-6">
+<span class="absolute top-0 right-0 bg-secondary-container text-on-secondary-container px-2 py-1 text-[10px] font-bold rounded">20% OFF</span>
+<img class="w-full aspect-square object-contain" data-alt="Premium black acetate eyeglass frames shown from a 45 degree angle on a pure white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASRpwQYf-ojU7loc3X2swKs6TiuRIkf6sJ_3EU7bDOMjb7IABviOhoGsrAv8IO5zBUEbd6p_Wanxiwg0qMY7DQ9T_AZ4ToLtM5fNdNZVsQRBVWR8JQ5zewqC1NnyVoqmuBILV18lBFslopJN1MUcwkTD9ChRKEyLlWfwdjW4O6mbuYROgasdPupCT-37ZJX2myrnyjRwO1qP9kXPnjs58Ywwi65BHw4UCkBMPR2bEWU7LNnLoXkYHD49GnlujgdquB80VXXeMAnoo"/>
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 bg-white shadow-md rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<h4 class="font-bold text-lg text-primary mb-1">Zenith Matte Black</h4>
+<p class="text-xs text-on-surface-variant font-label mb-4">SKU: DR-2024-ZMB</p>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-xl font-bold text-primary">$129.00</span>
+<span class="text-sm text-on-surface-variant line-through ml-2">$159.00</span>
+</div>
+<button class="bg-secondary text-white p-2 rounded-md active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl transition-all hover:shadow-[0_20px_40px_rgba(24,28,32,0.06)] group">
+<div class="relative mb-6">
+<img class="w-full aspect-square object-contain" data-alt="Rose gold metallic round glasses with delicate detailing on pure white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADy06P8nvdXuKWLwuvYfrasgHePB7JCCq_Hbg8IMEl8YqnsW_KUSkAJqweYTVgx-dknKsMYSxavy_z3lA9Hvx__LSOUlxIqUhaoexK6eqZXFBjyWmKBcegSDqz7lhgIRFvC5SPFZzMLAFagtGz5pH6gLXHIi3Fu5KbAvw7L7tanLLLPwyQ8q27lQImFi0Be1S6gzecW-6INOh_GJsH8so231gnCC1jfn1-8kPQeZSneeKRVijEC2GxW1FDMo4VDYyqG8wmroLDrOE"/>
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 bg-white shadow-md rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<h4 class="font-bold text-lg text-primary mb-1">Luna Rose Gold</h4>
+<p class="text-xs text-on-surface-variant font-label mb-4">SKU: DR-2024-LRG</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-bold text-primary">$189.00</span>
+<button class="bg-secondary text-white p-2 rounded-md active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl transition-all hover:shadow-[0_20px_40_rgba(24,28,32,0.06)] group">
+<div class="relative mb-6">
+<img class="w-full aspect-square object-contain" data-alt="Transparent crystal acetate square frames on pure white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdGUZoFG3sBKiH4BdilS4N-AFwP4uov-RU2JRzn9tLAxNp--_RajBBhkVfz0lp9uFiUTo8eUCF00kRpReNQAJngm-_b7jZG6cc-c-CKQm5foP0QKPhe-064bok_GLTKbIa88HMVt54TMiyyskX6_Ha8aDsSBkUW4kzQ4PjK1d5AGvZoAS3oS0-MNKUDhLxidGZ5g0Wx_DcvI3r5JdFH_bqfHy1eJf1hl9QMhLS2Du4YjeVbdZ_qE-INmybBtjdf0PhAwDaHxtRJew"/>
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 bg-white shadow-md rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<h4 class="font-bold text-lg text-primary mb-1">Aura Crystal Clear</h4>
+<p class="text-xs text-on-surface-variant font-label mb-4">SKU: DR-2024-ACC</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-bold text-primary">$145.00</span>
+<button class="bg-secondary text-white p-2 rounded-md active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl transition-all hover:shadow-[0_20px_40px_rgba(24,28,32,0.06)] group">
+<div class="relative mb-6">
+<span class="absolute top-0 right-0 bg-secondary-container text-on-secondary-container px-2 py-1 text-[10px] font-bold rounded">BESTSELLER</span>
+<img class="w-full aspect-square object-contain" data-alt="Classic tortoiseshell pattern eyeglass frames on white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxgmkprVbLwHdIvlVt1G29sOjrbPW57qV9dT7fu8lfIH7I1fv3Sr-s15jM0kOW49IF16H36R46El_q6Xu0y9pg4EHQv-LdMUIG2hK7usVxjnTC0wTckN3P7-QYNAtgmFKO3Gbh6kAlJMGvksKkHClA4O0k4PYJIhf1bCuFoKyjlAEUrcetC-BKnb7Ue3j2NrkFC10VyBLtPlZKRFf2HMwdJPxPEZ1BX6D0BFaoHvZnOrHNiHgHHMWN5HzLNwp0fMWpIpsT7LrTXOA"/>
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 bg-white shadow-md rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<h4 class="font-bold text-lg text-primary mb-1">Amber Tortoise</h4>
+<p class="text-xs text-on-surface-variant font-label mb-4">SKU: DR-2024-AMT</p>
+<div class="flex justify-between items-center">
+<span class="text-xl font-bold text-primary">$165.00</span>
+<button class="bg-secondary text-white p-2 rounded-md active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Eye Test CTA -->
+<section class="relative h-[500px] overflow-hidden">
+<div class="absolute inset-0">
+<img class="w-full h-full object-cover" data-alt="A professional optometrist performing an eye examination on a patient using high-tech medical diagnostic equipment in a clean bright clinical office." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHQIt49ImTD8-pM4LJhStVhkEpTMPvRfwSqbCG9IaX4cIzWHhiCpqgD3EKgrHMpEdkZMxxEbQxWDGxIEyDeMEftuu_n8OpBV0yN8nvMJUrb3S0JK1o1SrSq_C93lC7W3VIAMQd8WzyKAXx4oxascJT8HJqR-o2V0wEnboRqw8QI68LW-H-uCXzTjZSDAxI4B82pjCzT_NFVHpA6fUYrxNVqyCDJlUGcEGZoxmo6sskxqFwN-R5R-BXuv85ljSLvntwrgwyBdizsCc"/>
+<div class="absolute inset-0 bg-primary/40 backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-8">
+<h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6 max-w-3xl">Professional Eye Care for Your Vision Health</h2>
+<p class="text-white/90 text-lg mb-10 max-w-2xl font-body">Our expert optometrists use state-of-the-art technology to ensure your prescription is perfect and your eyes are healthy.</p>
+<button class="px-10 py-5 bg-secondary-container text-on-secondary-container font-bold text-lg rounded-md hover:scale-105 transition-transform active:scale-95 shadow-xl">Book Your Free Eye Checkup</button>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-24 max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-center">
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="verified_user">verified_user</span>
+</div>
+<h3 class="font-bold text-lg text-primary mb-2">Certified Lenses</h3>
+<p class="text-on-surface-variant text-sm font-body">Global quality standards and 100% UV protection.</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="payments">payments</span>
+</div>
+<h3 class="font-bold text-lg text-primary mb-2">Affordable Prices</h3>
+<p class="text-on-surface-variant text-sm font-body">Premium eyewear that fits your budget perfectly.</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="local_shipping">local_shipping</span>
+</div>
+<h3 class="font-bold text-lg text-primary mb-2">Fast Delivery</h3>
+<p class="text-on-surface-variant text-sm font-body">Doorstep delivery across the nation in 48 hours.</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="support_agent">support_agent</span>
+</div>
+<h3 class="font-bold text-lg text-primary mb-2">Expert Support</h3>
+<p class="text-on-surface-variant text-sm font-body">Consult with our optical experts anytime.</p>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 bg-surface-container">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-4xl font-extrabold text-primary text-center mb-16">Trusted by 10k+ Customers</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-lowest p-10 rounded-xl relative">
+<div class="flex gap-1 text-secondary mb-6">
+<span class="material-symbols-outlined fill text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 font-body leading-relaxed">"The eye test was incredibly thorough. I've never had glasses that felt this natural from the first day."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a professional man in a business casual attire, smiling warmly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy0-g5wpWfjdqXEWTnMaKXd9mPFgfwmUCH-QtQUeBLq-jxT76MjUKM1LTDKcqCzrDahUNiL5uBlJAOXg4sNcUSNIRE9mCErBWs9fl2H4gHecYFE-UvLBKx1-XBDVtnQCNSGyula5Uy0LKG06lF7OpYW7Pcw_72gxGt771KLmSIiK0w3ugWAzPfb9q7jCjAi1MkN1CBzDag1a6-5_HLw6Zh49F334yHGmC4H1UdWMWQh_WWWTboRauB4ouHM7SkfmMBJbVr55syEA8"/>
+<div>
+<h4 class="font-bold text-primary">Arjun Mehta</h4>
+<p class="text-xs text-on-surface-variant">Architecture Lead</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-xl relative">
+<div class="flex gap-1 text-secondary mb-6">
+<span class="material-symbols-outlined fill text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 font-body leading-relaxed">"Their virtual try-on is game-changing. The sunglasses I received look exactly like they did on screen."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Young creative woman with stylish hair looking into the camera." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8JYT1BOczNHYoy-ijQA4JOjGrxw_SOfesce5JxhJ6TLWjiMRyTSTYH0S_HxZYC9-oEFpqvGAyD9-4k1LblSiR0JZHuAROQ0hslyvyxRYGNdl54MyPAkVVftQ4s0XQgUZu2d1pHge0c1P5QzeqfvgBETVhNmTJA4ehaPJ3Lntm5pZmWhj6syyBulvodIMfDB3D6KfGT8ZAnmUMKVHzcrtZfxffLFdSg_o7zX3i0oBulftkFaYW5Wz2kMKy-LfoxUadiY1YGdWFzRI"/>
+<div>
+<h4 class="font-bold text-primary">Sanya Kapoor</h4>
+<p class="text-xs text-on-surface-variant">Creative Director</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-xl relative">
+<div class="flex gap-1 text-secondary mb-6">
+<span class="material-symbols-outlined fill text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 font-body leading-relaxed">"Excellent service! The delivery was within 24 hours as promised. The frame quality is top-notch."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Middle-aged smiling man wearing clear eyeglasses." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvb_YX3Xupihgm2rblPC3h6CL-PZFLS-RaAh4cycoS4y_8cwpK4_dT8aohdRa7RUvBVlvdKWqqG6HdTMTllhcTtjC5NVVcxjWPIWmXxJjv_fMCTipfCehB0NyFToO3t_zLpM_UmSNs53s0D1D-lMb86pMc4iIb384ZWfbmfpaYoFrjZB6w7NulyHVfhcWWUNBbqfJzhCA2LK9UVfzvHi8mqn2IB21b7_vomydy9qRwmmcFUip7fwmMNrf_mCKwwrVJDtbEpr7kIEY"/>
+<div>
+<h4 class="font-bold text-primary">Rahul Verma</h4>
+<p class="text-xs text-on-surface-variant">Software Engineer</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Blog Preview -->
+<section class="py-24 max-w-7xl mx-auto px-8">
+<h2 class="text-4xl font-extrabold text-primary mb-12">Visionary Insights</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<article class="group">
+<div class="overflow-hidden rounded-xl mb-6 aspect-[4/3]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of digital eyes being scanned by light, futuristic tech concept for eye care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlxUayS6O5U28rZGbvStLxSZsvnYGBgSNtdyJnWGGfGeq9zFdHqiGi2xvI3u76AZxWyDJbdeojE5TQNcGX2qDiWKPlBdEDC3khiNGAhU-no2N0gelHZFtDbZmO2vzySD8p8Dhj1dRdML0leULmyBT9oFuhjHKqHbOvI-7itAc-XNElUaMnK_EchPlp7ld7g-cLGuRC7HF393FHIqUX16Z1HNx-SME_dbmg4fmfA0_fMdKPDe8ASqJL4yAkm11AJIw4MIyKdnN9CzI"/>
+</div>
+<span class="text-xs font-bold text-secondary tracking-widest uppercase mb-3 block">Digital Wellness</span>
+<h3 class="text-xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors">Combatting Screen Fatigue in the Digital Age</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-4">Learn how blue light lenses can protect your eyes from long hours of computer work...</p>
+<a class="text-primary font-bold text-sm inline-flex items-center gap-2" href="#">Read More <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></a>
+</article>
+<article class="group">
+<div class="overflow-hidden rounded-xl mb-6 aspect-[4/3]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Selection of luxury frames organized neatly on a boutique shelf." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy0HJKx47y8UZutO7ZJwOeJLJTlT6H_yVLnmITO-GXYu1gKxdBJZnV_rNrf0ZIuktIEm-1rqdyphaF7BXDoZjFxclbAu6gu-4HQa-1IoL2sTXIYvTkJM1zDUkk9LZzQjP_6mKn_V5rIDmpQVIcFzwNn-tTJ6NhQLD1Ya0LwFNY9gCRRPjRl6m661H0WglcNOvhbcBoF_MutaYa8O7xQB1cX6hVgJofBcMnT64p1g3cdod4B5ohOKfkfzjlPeNVPI1Co1kYmmi5k-I"/>
+</div>
+<span class="text-xs font-bold text-secondary tracking-widest uppercase mb-3 block">Fashion Guide</span>
+<h3 class="text-xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors">Choosing the Right Frame for Your Face Shape</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-4">A comprehensive guide to finding the perfect aesthetic balance for your unique features...</p>
+<a class="text-primary font-bold text-sm inline-flex items-center gap-2" href="#">Read More <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></a>
+</article>
+<article class="group">
+<div class="overflow-hidden rounded-xl mb-6 aspect-[4/3]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Macro of a high-tech contact lens being placed in eye, sterile and medical style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARlvCiEhGXTjkY8M-5ecMrTjamFLqQLNxUljrQdedtjWZuh5zKDVAFy9WMqQAIo08GxKwKpMI4JLlqUmy6uXyHAHhlNSZN3KWOsZ-fuxhJySxNH0DSeAN27eC65vpjBSaZCrGCsBqGSWhr_I0u7g3_qf6uNpA3qvOB4Fop_jiKKiLnGzw8BLjbqS8Nqr6UranHQG3oOwNx_TpztQzVOvKeTx-mULt9hFRs4MeSyrvd8u54N2vuNGll67JyQUsvUcJsIsqPKZdzio0"/>
+</div>
+<span class="text-xs font-bold text-secondary tracking-widest uppercase mb-3 block">Innovation</span>
+<h3 class="text-xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors">The Future of Contact Lens Technology</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-4">From smart lenses to sustainable materials, see what's next in ocular innovation...</p>
+<a class="text-primary font-bold text-sm inline-flex items-center gap-2" href="#">Read More <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></a>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+<div class="bg-slate-100 dark:bg-slate-900 py-16">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<span class="text-xl font-bold font-['Manrope'] mb-6 block text-slate-900 dark:text-slate-50">Drishti Optical</span>
+<p class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm leading-relaxed mb-6">Precise vision, curated style. Your destination for premium ocular healthcare and world-class eyewear.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-teal-600" data-icon="public">public</span>
+<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-teal-600" data-icon="share">share</span>
+<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-teal-600" data-icon="mail">mail</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-['Inter'] text-sm leading-relaxed" href="#">About Us</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-['Inter'] text-sm leading-relaxed" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-['Inter'] text-sm leading-relaxed" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-['Inter'] text-sm leading-relaxed" href="#">Terms of Service</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-['Inter'] text-sm leading-relaxed" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6">Categories</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-['Inter'] text-sm leading-relaxed" href="#">Eyeglasses</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-['Inter'] text-sm leading-relaxed" href="#">Sunglasses</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-['Inter'] text-sm leading-relaxed" href="#">Contact Lenses</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-['Inter'] text-sm leading-relaxed" href="#">Computer Glasses</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6">Newsletter</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Get updates on new collections and eye health tips.</p>
+<div class="flex">
+<input class="bg-white dark:bg-slate-800 border-none rounded-l-md w-full focus:ring-1 focus:ring-teal-600 text-sm" placeholder="Email Address" type="email"/>
+<button class="bg-teal-600 text-white px-4 rounded-r-md">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center text-slate-500 dark:text-slate-400 text-sm">
+                © 2024 Drishti Optical. Crafted for Precision.
+            </div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg rounded-t-3xl border-t border-slate-100 dark:border-slate-800 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] flex justify-around items-center h-20 px-4 pb-safe">
+<button class="flex flex-col items-center justify-center text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/30 rounded-2xl px-4 py-1 transition-transform duration-200 active:scale-90">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[11px] font-medium font-['Inter']">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 active:bg-slate-50 dark:active:bg-slate-800 transition-transform duration-200 active:scale-90">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="text-[11px] font-medium font-['Inter']">Categories</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 active:bg-slate-50 dark:active:bg-slate-800 transition-transform duration-200 active:scale-90">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="text-[11px] font-medium font-['Inter']">Cart</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 active:bg-slate-50 dark:active:bg-slate-800 transition-transform duration-200 active:scale-90">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[11px] font-medium font-['Inter']">Account</span>
+</button>
+</nav>
+</body></html>
