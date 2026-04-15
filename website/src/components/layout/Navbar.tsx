@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 w-full z-50 glass-nav dark:bg-slate-950/70 border-b border-outline-variant/10">
       <nav className="flex justify-between items-center px-8 py-4 max-w-[1920px] mx-auto">
-        <Link href="/" className="text-2xl font-bold tracking-tighter text-slate-900 dark:text-slate-50 font-headline">
+        <Link href="/" className="text-2xl font-bold tracking-tighter text-teal-600 dark:text-teal-400 font-headline">
           Drishti Optical
         </Link>
         
@@ -12,20 +12,14 @@ const Navbar = () => {
           <Link href="/category/eyeglasses" className="text-teal-600 dark:text-teal-400 border-b-2 border-teal-600 dark:border-teal-400 pb-1 font-headline font-semibold tracking-tight">
             Eyeglasses
           </Link>
-          <Link href="/category/sunglasses" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors font-headline font-semibold tracking-tight">
+          <Link href="/category/sunglasses" className="text-on-surface hover:text-secondary transition-colors font-headline font-semibold tracking-tight">
             Sunglasses
           </Link>
-          <Link href="/category/contact-lenses" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors font-headline font-semibold tracking-tight">
+          <Link href="/category/contact-lenses" className="text-on-surface hover:text-secondary transition-colors font-headline font-semibold tracking-tight">
             Contact Lenses
           </Link>
-          <Link href="/eye-test" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors font-headline font-semibold tracking-tight">
+          <Link href="/eye-test" className="text-on-surface hover:text-secondary transition-colors font-headline font-semibold tracking-tight">
             Eye Test
-          </Link>
-          <Link href="/blog" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors font-headline font-semibold tracking-tight">
-            Blog
-          </Link>
-          <Link href="/contact" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors font-headline font-semibold tracking-tight">
-            Contact
           </Link>
         </div>
 

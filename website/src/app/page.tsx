@@ -4,8 +4,10 @@ import Button from '@/components/ui/Button';
 import ProductCard from '@/components/product/ProductCard';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getProducts } from '@/lib/shopify';
-import { ShopifyProduct } from '@/types/shopify';
+import { getCollection, getProducts } from '@/lib/shopify';
+import { ShopifyCollection, ShopifyProduct } from '@/types/shopify';
+
+const HOMEPAGE_COLLECTION_HANDLE = 'home-page';
 
 const STATIC_PRODUCTS = [
   { id: '1', name: 'Zenith Matte Black', price: '₹3,999', sku: 'DR-2024-ZMB', tag: 'NEW', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuASRpwQYf-ojU7loc3X2swKs6TiuRIkf6sJ_3EU7bDOMjb7IABviOhoGsrAv8IO5zBUEbd6p_Wanxiwg0qMY7DQ9T_AZ4ToLtM5fNdNZVsQRBVWR8JQ5zewqC1NnyVoqmuBILV18lBFslopJN1MUcwkTD9ChRKEyLlWfwdjW4O6mbuYROgasdPupCT-37ZJX2myrnyjRwO1qP9kXPnjs58Ywwi65BHw4UCkBMPR2bEWU7LNnLoXkYHD49GnlujgdquB80VXXeMAnoo' },
@@ -16,8 +18,16 @@ const STATIC_PRODUCTS = [
 
 export default async function Home() {
   let shopifyProducts: ShopifyProduct[] = [];
+  let homepageCollection: ShopifyCollection | null = null;
+
   try {
-    shopifyProducts = await getProducts();
+    homepageCollection = await getCollection(HOMEPAGE_COLLECTION_HANDLE);
+
+    if (homepageCollection?.products.nodes.length) {
+      shopifyProducts = homepageCollection.products.nodes;
+    } else {
+      shopifyProducts = await getProducts();
+    }
   } catch {
     // Silently fall back to static products
   }
@@ -112,8 +122,10 @@ export default async function Home() {
           <div className="max-w-7xl mx-auto px-8">
             <div className="flex justify-between items-end mb-12">
               <div>
-                <h2 className="text-4xl font-extrabold tracking-tight text-primary">Featured Frames</h2>
-                <p className="text-on-surface-variant mt-2 font-body">The Digital Curator&apos;s Choice</p>
+                <h2 className="text-4xl font-extrabold tracking-tight text-primary">{homepageCollection?.title || 'Featured Frames'}</h2>
+                <p className="text-on-surface-variant mt-2 font-body">
+                  {homepageCollection?.description || 'Products selected from your Shopify homepage collection.'}
+                </p>
               </div>
               <Button variant="tertiary" className="pb-1 border-b-2 border-primary rounded-none">View All</Button>
             </div>

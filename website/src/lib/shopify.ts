@@ -1,4 +1,4 @@
-import { ShopifyProductsResponse, ShopifyCollectionResponse } from '@/types/shopify';
+import { ShopifyProductsResponse, ShopifyCollectionResponse, ShopifyProductResponse } from '@/types/shopify';
 
 const domain = process.env.SHOPIFY_STORE_DOMAIN;
 const accessToken = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
@@ -28,7 +28,7 @@ async function shopifyFetch<T>({
     },
     body: JSON.stringify({ query, variables }),
     cache,
-    next: { revalidate: 900 },
+    next: { revalidate: 60 },
   });
 
   const body: GraphQLResponse<T> = await result.json();
@@ -78,7 +78,9 @@ export async function getCollection(handle: string) {
     query: `
       query getCollection($handle: String!) {
         collection(handle: $handle) {
+          id
           title
+          handle
           description
           products(first: 20) {
             nodes {
@@ -107,4 +109,53 @@ export async function getCollection(handle: string) {
   });
 
   return res.data.collection;
+}
+
+export async function getProduct(handle: string) {
+  const res = await shopifyFetch<ShopifyProductResponse>({
+    query: `
+      query getProduct($handle: String!) {
+        product(handle: $handle) {
+          id
+          title
+          handle
+          description
+          descriptionHtml
+          availableForSale
+          images(first: 6) {
+            nodes {
+              url
+              altText
+              width
+              height
+            }
+          }
+          priceRange {
+            minVariantPrice {
+              amount
+              currencyCode
+            }
+          }
+          variants(first: 10) {
+            nodes {
+              id
+              title
+              availableForSale
+              price {
+                amount
+                currencyCode
+              }
+              compareAtPrice {
+                amount
+                currencyCode
+              }
+            }
+          }
+        }
+      }
+    `,
+    variables: { handle },
+  });
+
+  return res.data.product;
 }

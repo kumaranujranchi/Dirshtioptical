@@ -39,16 +39,17 @@ const ProductCard = ({ id, name, price, discountPrice, image, sku, tag }: Produc
         <h4 className="font-bold text-lg text-primary mb-1">{name}</h4>
         <p className="text-[10px] text-on-surface-variant font-label mb-4 tracking-wider">SKU: {sku}</p>
         
-        <div className="mt-auto flex justify-between items-center">
-          <div>
+        <div className="mt-auto">
+          <div className="mb-4">
             <span className="text-xl font-bold text-primary">{price}</span>
             {discountPrice && (
               <span className="text-sm text-on-surface-variant line-through ml-2">{discountPrice}</span>
             )}
           </div>
-          <div className="bg-secondary text-white p-2 rounded-md active:scale-95 group-hover:bg-secondary/90 transition-all">
-            <span className="material-symbols-outlined align-middle">shopping_bag</span>
-          </div>
+          <button className="w-full flex items-center justify-center gap-2 bg-secondary text-white py-3 rounded-lg font-semibold text-sm active:scale-95 hover:bg-secondary/90 transition-all">
+            <span className="material-symbols-outlined text-base align-middle">shopping_bag</span>
+            Add to Cart
+          </button>
         </div>
       </div>
     </Link>

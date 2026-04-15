@@ -56,6 +56,10 @@ export interface ShopifyProductsResponse {
   };
 }
 
+export interface ShopifyProductResponse {
+  product: ShopifyProduct | null;
+}
+
 export interface ShopifyCollectionResponse {
-  collection: ShopifyCollection;
+  collection: ShopifyCollection | null;
 }
