@@ -17,27 +17,37 @@ async function shopifyFetch<T>({
   cache = 'force-cache'
 }: {
   query: string;
-  variables?: Record<string, string>;
+  variables?: Record<string, any>;
   cache?: RequestCache;
 }): Promise<GraphQLResponse<T>> {
-  const result = await fetch(endpoint, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Shopify-Storefront-Access-Token': accessToken!,
-    },
-    body: JSON.stringify({ query, variables }),
-    cache,
-    next: { revalidate: 60 },
-  });
+  try {
+    const result = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Shopify-Storefront-Access-Token': accessToken!,
+      },
+      body: JSON.stringify({ query, variables }),
+      cache,
+      next: { revalidate: 60 },
+    });
 
-  const body: GraphQLResponse<T> = await result.json();
+    if (!result.ok) {
+      throw new Error(`Shopify API error: ${result.status} ${result.statusText}`);
+    }
 
-  if (body.errors) {
-    throw new Error(body.errors[0].message);
+    const body: GraphQLResponse<T> = await result.json();
+
+    if (body.errors) {
+      console.error('Shopify GraphQL Errors:', body.errors);
+      throw new Error(body.errors[0].message);
+    }
+
+    return body;
+  } catch (error) {
+    console.error('Error fetching from Shopify:', error);
+    throw error;
   }
-
-  return body;
 }
 
 export async function getProducts() {
@@ -158,4 +168,34 @@ export async function getProduct(handle: string) {
   });
 
   return res.data.product;
+}
+
+export async function getRecommendedProducts(productId: string) {
+  const res = await shopifyFetch<ShopifyProductsResponse>({
+    query: `
+      query getRecommendedProducts($productId: ID!) {
+        productRecommendations(productId: $productId) {
+          id
+          title
+          handle
+          availableForSale
+          images(first: 1) {
+            nodes {
+              url
+              altText
+            }
+          }
+          priceRange {
+            minVariantPrice {
+              amount
+              currencyCode
+            }
+          }
+        }
+      }
+    `,
+    variables: { productId },
+  });
+
+  return (res.data as any).productRecommendations || [];
 }

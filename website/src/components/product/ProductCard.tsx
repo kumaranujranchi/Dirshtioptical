@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 
 interface ProductCardProps {
   id: string;
@@ -12,47 +15,69 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ id, name, price, discountPrice, image, sku, tag }: ProductCardProps) => {
+  const [isFavorite, setIsFavorite] = useState(false);
+
   return (
-    <Link href={`/product/${id}`} className="block h-full group">
-      <div className="bg-surface-container-lowest p-6 rounded-xl transition-all hover:shadow-ambient h-full flex flex-col">
-        <div className="relative mb-6">
-          {tag && (
-            <span className="absolute top-0 right-0 bg-secondary-container text-on-secondary-container px-2 py-1 text-[10px] font-bold rounded z-10">
+    <div className="group relative flex flex-col bg-surface-container-lowest border border-outline-variant/10 rounded-[2rem] overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1">
+      {/* Image Container */}
+      <Link href={`/product/${id}`} className="relative aspect-[4/5] block overflow-hidden bg-white m-2 rounded-[1.6rem]">
+        {tag && (
+          <div className="absolute top-4 left-4 z-10">
+            <span className="bg-primary text-on-primary px-3 py-1 text-[10px] font-black uppercase tracking-widest rounded-full shadow-lg">
               {tag}
             </span>
-          )}
-          <div className="aspect-square relative overflow-hidden rounded-lg">
-            <Image
-              src={image}
-              alt={name}
-              fill
-              className="object-contain transition-transform duration-500 group-hover:scale-105"
-            />
           </div>
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-            <div className="p-2 bg-white shadow-md rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
-              <span className="material-symbols-outlined text-sm">visibility</span>
-            </div>
+        )}
+        
+        <button 
+          onClick={(e) => {
+            e.preventDefault();
+            setIsFavorite(!isFavorite);
+          }}
+          className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full glass-nav flex items-center justify-center text-primary transition-all active:scale-90 hover:bg-primary hover:text-white"
+        >
+          <span className={`material-symbols-outlined text-[20px] ${isFavorite ? 'fill-1' : ''}`} style={{ fontVariationSettings: isFavorite ? "'FILL' 1" : "'FILL' 0" }}>
+            favorite
+          </span>
+        </button>
+
+        <Image
+          src={image}
+          alt={name}
+          fill
+          className="object-contain p-8 transition-transform duration-700 group-hover:scale-110"
+        />
+        
+        <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-500" />
+      </Link>
+
+      {/* Content */}
+      <div className="p-6 flex flex-col flex-grow">
+        <div className="mb-4">
+          <Link href={`/product/${id}`}>
+            <h4 className="font-bold text-lg text-primary mb-1 group-hover:text-teal-600 transition-colors line-clamp-1">{name}</h4>
+          </Link>
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-bold text-outline uppercase tracking-tighter">{sku}</span>
+            <span className="w-1 h-1 rounded-full bg-outline-variant" />
+            <span className="text-[10px] font-bold text-secondary uppercase">Available</span>
           </div>
         </div>
         
-        <h4 className="font-bold text-lg text-primary mb-1">{name}</h4>
-        <p className="text-[10px] text-on-surface-variant font-label mb-4 tracking-wider">SKU: {sku}</p>
-        
-        <div className="mt-auto">
-          <div className="mb-4">
-            <span className="text-xl font-bold text-primary">{price}</span>
+        <div className="mt-auto flex items-center justify-between gap-4">
+          <div className="flex flex-col">
+            <span className="text-xl font-black text-primary tracking-tighter">{price}</span>
             {discountPrice && (
-              <span className="text-sm text-on-surface-variant line-through ml-2">{discountPrice}</span>
+              <span className="text-xs text-outline line-through">{discountPrice}</span>
             )}
           </div>
-          <button className="w-full flex items-center justify-center gap-2 bg-secondary text-white py-3 rounded-lg font-semibold text-sm active:scale-95 hover:bg-secondary/90 transition-all">
-            <span className="material-symbols-outlined text-base align-middle">shopping_bag</span>
-            Add to Cart
+          
+          <button className="flex items-center justify-center w-12 h-12 bg-primary text-on-primary rounded-2xl transition-all hover:bg-teal-600 hover:scale-105 active:scale-95 shadow-lg shadow-primary/10">
+            <span className="material-symbols-outlined text-[22px]">shopping_bag</span>
           </button>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 
