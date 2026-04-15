@@ -207,6 +207,7 @@ export default async function Home() {
                       price={`₹${parseFloat(product.priceRange.minVariantPrice.amount).toLocaleString('en-IN')}`}
                       sku={product.id.split('/').pop() || ''}
                       image={product.images.nodes[0]?.url || ''}
+                      variantId={product.variants.nodes[0]?.id}
                     />
                   ))
                 : STATIC_PRODUCTS.map((product) => (

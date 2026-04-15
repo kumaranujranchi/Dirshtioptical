@@ -59,7 +59,7 @@
   --radius-DEFAULT: 0.125rem;
   --radius-lg: 0.25rem;
   --radius-xl: 0.5rem;
-  --radius-full: 0.75rem;
+  --radius-full: 9999px;
 
   /* Depth / Shadows */
   --shadow-ambient: 0 20px 40px rgba(24, 28, 32, 0.06);
@@ -89,4 +89,5 @@
 
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  text-transform: none !important;
 }

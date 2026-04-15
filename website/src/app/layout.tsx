@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   description: "Experience the Clinical Atelier. Premium eyewear crafted with precision and medical excellence.",
 };
 
+import { CartProvider } from "@/lib/CartContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,7 +30,9 @@ export default function RootLayout({
       className={`${inter.variable} ${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-surface text-on-surface">
-        {children}
+        <CartProvider>
+          {children}
+        </CartProvider>
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
           rel="stylesheet"

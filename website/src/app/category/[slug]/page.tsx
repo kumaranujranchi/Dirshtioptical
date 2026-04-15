@@ -151,6 +151,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
                       price={formatPrice(product.priceRange.minVariantPrice.amount)}
                       sku={product.id.split('/').pop() || ''}
                       image={product.images.nodes[0]?.url || ''}
+                      variantId={product.variants.nodes[0]?.id}
                     />
                   ))}
                 </div>

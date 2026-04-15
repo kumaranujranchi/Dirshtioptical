@@ -1,4 +1,4 @@
-import { ShopifyProductsResponse, ShopifyCollectionResponse, ShopifyProductResponse } from '@/types/shopify';
+import { ShopifyProductsResponse, ShopifyCollectionResponse, ShopifyProductResponse, ShopifyCartResponse } from '@/types/shopify';
 
 const domain = process.env.SHOPIFY_STORE_DOMAIN;
 const accessToken = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
@@ -60,6 +60,11 @@ export async function getProducts() {
             title
             handle
             availableForSale
+            variants(first: 1) {
+              nodes {
+                id
+              }
+            }
             images(first: 1) {
               nodes {
                 url
@@ -98,6 +103,11 @@ export async function getCollection(handle: string) {
               title
               handle
               availableForSale
+              variants(first: 1) {
+                nodes {
+                  id
+                }
+              }
               images(first: 1) {
                 nodes {
                   url
@@ -198,4 +208,196 @@ export async function getRecommendedProducts(productId: string) {
   });
 
   return (res.data as any).productRecommendations || [];
+}
+
+export async function createCart() {
+  const res = await shopifyFetch<ShopifyCartResponse>({
+    query: `
+      mutation cartCreate {
+        cartCreate {
+          cart {
+            id
+            checkoutUrl
+          }
+        }
+      }
+    `,
+    cache: 'no-store'
+  });
+
+  return res.data.cartCreate.cart;
+}
+
+export async function addToCart(cartId: string, variantId: string) {
+  const res = await shopifyFetch<ShopifyCartResponse>({
+    query: `
+      mutation cartLinesAdd($cartId: ID!, $lines: [CartLineInput!]!) {
+        cartLinesAdd(cartId: $cartId, lines: $lines) {
+          cart {
+            id
+            checkoutUrl
+            lines(first: 100) {
+              nodes {
+                id
+                quantity
+                merchandise {
+                  ... on ProductVariant {
+                    id
+                    title
+                    product {
+                      title
+                      handle
+                    }
+                    image {
+                      url
+                    }
+                    price {
+                      amount
+                      currencyCode
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+    variables: {
+      cartId,
+      lines: [
+        {
+          merchandiseId: variantId,
+          quantity: 1,
+        },
+      ],
+    },
+    cache: 'no-store'
+  });
+
+  return res.data.cartLinesAdd.cart;
+}
+
+export async function getCart(cartId: string) {
+  const res = await shopifyFetch<ShopifyCartResponse>({
+    query: `
+      query getCart($cartId: ID!) {
+        cart(id: $cartId) {
+          id
+          checkoutUrl
+          lines(first: 100) {
+            nodes {
+              id
+              quantity
+              merchandise {
+                ... on ProductVariant {
+                  id
+                  title
+                  product {
+                    title
+                    handle
+                  }
+                  image {
+                    url
+                  }
+                  price {
+                    amount
+                    currencyCode
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+    variables: { cartId },
+    cache: 'no-store'
+  });
+
+  return res.data.cart;
+}
+
+export async function updateCartLines(cartId: string, lines: { id: string, quantity: number }[]) {
+  const res = await shopifyFetch<ShopifyCartResponse>({
+    query: `
+      mutation cartLinesUpdate($cartId: ID!, $lines: [CartLineUpdateInput!]!) {
+        cartLinesUpdate(cartId: $cartId, lines: $lines) {
+          cart {
+            id
+            checkoutUrl
+            lines(first: 100) {
+              nodes {
+                id
+                quantity
+                merchandise {
+                  ... on ProductVariant {
+                    id
+                    title
+                    product {
+                      title
+                      handle
+                    }
+                    image {
+                      url
+                    }
+                    price {
+                      amount
+                      currencyCode
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+    variables: { cartId, lines },
+    cache: 'no-store'
+  });
+
+  return res.data.cartLinesUpdate.cart;
+}
+
+export async function removeCartLines(cartId: string, lineIds: string[]) {
+  const res = await shopifyFetch<ShopifyCartResponse>({
+    query: `
+      mutation cartLinesRemove($cartId: ID!, $lineIds: [ID!]!) {
+        cartLinesRemove(cartId: $cartId, lineIds: $lineIds) {
+          cart {
+            id
+            checkoutUrl
+            lines(first: 100) {
+              nodes {
+                id
+                quantity
+                merchandise {
+                  ... on ProductVariant {
+                    id
+                    title
+                    product {
+                      title
+                      handle
+                    }
+                    image {
+                      url
+                    }
+                    price {
+                      amount
+                      currencyCode
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+    variables: { cartId, lineIds },
+    cache: 'no-store'
+  });
+
+  return res.data.cartLinesRemove.cart;
 }

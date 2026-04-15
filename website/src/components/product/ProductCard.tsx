@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useCart } from '@/lib/CartContext';
+import { useRouter } from 'next/navigation';
 
 interface ProductCardProps {
   id: string;
@@ -12,10 +14,30 @@ interface ProductCardProps {
   image: string;
   sku: string;
   tag?: string;
+  variantId?: string;
 }
 
-const ProductCard = ({ id, name, price, discountPrice, image, sku, tag }: ProductCardProps) => {
+const ProductCard = ({ id, name, price, discountPrice, image, sku, tag, variantId }: ProductCardProps) => {
   const [isFavorite, setIsFavorite] = useState(false);
+  const [isAdding, setIsAdding] = useState(false);
+  const [isAdded, setIsAdded] = useState(false);
+  const { addToCart } = useCart();
+
+  const handleAddToCart = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (!variantId || isAdding) return;
+    
+    setIsAdding(true);
+    try {
+      await addToCart(variantId);
+      setIsAdded(true);
+      setTimeout(() => setIsAdded(false), 2000);
+    } catch (error) {
+      console.error('Failed to add to cart:', error);
+    } finally {
+      setIsAdding(false);
+    }
+  };
 
   return (
     <div className="group relative flex flex-col bg-surface-container-lowest border border-outline-variant/10 rounded-[2rem] overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1">
@@ -72,8 +94,16 @@ const ProductCard = ({ id, name, price, discountPrice, image, sku, tag }: Produc
             )}
           </div>
           
-          <button className="flex items-center justify-center w-12 h-12 bg-primary text-on-primary rounded-2xl transition-all hover:bg-teal-600 hover:scale-105 active:scale-95 shadow-lg shadow-primary/10">
-            <span className="material-symbols-outlined text-[22px]">shopping_bag</span>
+          <button 
+            onClick={handleAddToCart}
+            disabled={isAdding || !variantId}
+            className={`flex items-center justify-center w-12 h-12 rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-lg disabled:opacity-50 disabled:pointer-events-none ${
+              isAdded ? 'bg-teal-600 text-white shadow-teal-200' : 'bg-primary text-on-primary shadow-primary/10 hover:bg-teal-600'
+            }`}
+          >
+            <span className={`material-symbols-outlined text-[22px] ${isAdding ? 'animate-spin' : ''}`}>
+              {isAdding ? 'sync' : (isAdded ? 'check_circle' : 'shopping_bag')}
+            </span>
           </button>
         </div>
       </div>

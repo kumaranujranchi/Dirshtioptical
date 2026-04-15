@@ -3,11 +3,13 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import { useCart } from '@/lib/CartContext';
 
 const Navbar = () => {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { itemCount } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,7 +73,11 @@ const Navbar = () => {
           </button>
           <Link href="/cart" className="relative p-2 hover:bg-surface-container-high rounded-full transition-all active:scale-95">
             <span className="material-symbols-outlined text-[22px]">shopping_bag</span>
-            <span className="absolute top-1 right-1 w-4 h-4 bg-teal-600 text-[10px] text-white flex items-center justify-center rounded-full font-bold">0</span>
+            {itemCount > 0 && (
+              <span className="absolute top-1 right-1 w-4 h-4 bg-teal-600 text-[10px] text-white flex items-center justify-center rounded-full font-bold">
+                {itemCount}
+              </span>
+            )}
           </Link>
           
           <button 

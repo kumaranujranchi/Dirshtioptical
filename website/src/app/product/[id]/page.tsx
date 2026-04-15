@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation';
 import { getProduct, getRecommendedProducts } from '@/lib/shopify';
 import Link from 'next/link';
 import { ShopifyProduct } from '@/types/shopify';
+import ProductActions from '@/components/product/ProductActions';
 
 function formatPrice(amount: string) {
   return `₹${parseFloat(amount).toLocaleString('en-IN')}`;
@@ -50,26 +51,33 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 xl:gap-24 mb-32">
             {/* Gallery Section */}
-            <div className="lg:col-span-12 xl:col-span-7 space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+            <div className="lg:col-span-12 xl:col-span-7">
+              <div className="grid grid-cols-2 gap-6">
                 {images.length > 0 ? (
                   images.map((image, index) => (
                     <div 
                       key={image.url} 
-                      className={`relative bg-white rounded-[2.5rem] overflow-hidden border border-outline-variant/10 group ${index === 0 ? 'col-span-2 aspect-[16/9]' : 'aspect-square'}`}
+                      className={`relative bg-surface-container-low/50 rounded-[3rem] overflow-hidden border border-outline-variant/10 group transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 ${
+                        index === 0 
+                          ? 'col-span-2 aspect-[16/10]' 
+                          : 'col-span-1 aspect-square'
+                      }`}
                     >
                       <Image
                         src={image.url}
                         alt={image.altText || product.title}
                         fill
-                        className="object-contain p-12 transition-transform duration-1000 group-hover:scale-110"
+                        className="object-contain p-8 md:p-12 transition-all duration-1000 group-hover:scale-105"
                         priority={index === 0}
                       />
                     </div>
                   ))
                 ) : (
-                  <div className="col-span-2 aspect-[16/9] bg-surface-container-low rounded-[2.5rem] flex items-center justify-center">
-                    <span className="material-symbols-outlined text-4xl text-outline-variant">image_not_supported</span>
+                  <div className="col-span-2 aspect-[16/10] bg-surface-container-low rounded-[3rem] flex items-center justify-center border-2 border-dashed border-outline-variant/30">
+                    <div className="text-center">
+                      <span className="material-symbols-outlined text-5xl text-outline-variant mb-4 block">image_not_supported</span>
+                      <p className="text-xs font-black uppercase tracking-widest text-outline">No Preview Available</p>
+                    </div>
                   </div>
                 )}
               </div>
@@ -121,24 +129,10 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                 </div>
 
                 {/* Purchase Actions */}
-                <div className="space-y-4">
-                  <Button size="lg" className="w-full rounded-2xl py-6 flex items-center justify-center gap-3 shadow-xl shadow-primary/20">
-                    <span className="material-symbols-outlined">shopping_cart</span>
-                    Add to Cart
-                  </Button>
-                  
-                  <div className="flex gap-4">
-                    <Button variant="outline" className="flex-1 rounded-2xl py-5 border-2 hover:bg-surface-container">
-                      Compare
-                    </Button>
-                    <Link href={`https://wa.me/91XXXXXXXXXX?text=Hi, I am interested in ${product.title}`} className="flex-1">
-                      <Button variant="secondary" className="w-full rounded-2xl py-5 flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white shadow-lg shadow-green-100 border-none">
-                        <span className="material-symbols-outlined">chat</span>
-                        WhatsApp Inquiry
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
+                <ProductActions 
+                  productTitle={product.title} 
+                  variantId={product.variants.nodes[0]?.id}
+                />
 
                 {/* Store Location Info */}
                 <div className="p-6 rounded-3xl bg-surface-container border border-outline-variant/10">
@@ -176,6 +170,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                     price={formatPrice(recProduct.priceRange.minVariantPrice.amount)}
                     sku={recProduct.id.split('/').pop() || ''}
                     image={recProduct.images.nodes[0]?.url || ''}
+                    variantId={recProduct.variants.nodes[0]?.id}
                   />
                 ))}
               </div>

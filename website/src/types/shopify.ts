@@ -63,3 +63,39 @@ export interface ShopifyProductResponse {
 export interface ShopifyCollectionResponse {
   collection: ShopifyCollection | null;
 }
+
+export interface ShopifyCart {
+  id: string;
+  checkoutUrl: string;
+  lines: {
+    nodes: ShopifyCartLine[];
+  };
+}
+
+export interface ShopifyCartLine {
+  id: string;
+  quantity: number;
+  merchandise: ShopifyProductVariant & {
+    product: {
+      title: string;
+      handle: string;
+    };
+    image: ShopifyImage;
+  };
+}
+
+export interface ShopifyCartResponse {
+  cartCreate: {
+    cart: ShopifyCart;
+  };
+  cartLinesAdd: {
+    cart: ShopifyCart;
+  };
+  cartLinesUpdate: {
+    cart: ShopifyCart;
+  };
+  cartLinesRemove: {
+    cart: ShopifyCart;
+  };
+  cart: ShopifyCart | null;
+}
